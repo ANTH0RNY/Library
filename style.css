@@ -2,15 +2,18 @@
     display: none;
 }
 
+button:hover{
+    cursor: pointer;
+}
+
 body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* background-color: #D9F4C7; */
-    background-color: #98B6B1;
+    background-color: #A6ECE0;
+    font-family: 'Roboto', sans-serif;
 }
 .app{
-    /* text-align: center; */
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -27,12 +30,9 @@ body{
 .heading{
     font-size: 36px;
     text-align: center;
-    /* background-color: #629677; */
     background-color: #D9F4C7;;
-    /* background-color: #98B6B1; */
     margin: 0;
     padding: 1.5rem 0;
-    /* width: 100vw; */
 }
 
 .btn{
@@ -93,8 +93,6 @@ select{
 .main{
     display: grid;
     grid-template-columns: .2fr 1fr;
-    gap: 4rem;
-    /* width: 90vmax; */
     padding: 0;
     margin: 0;
 }
@@ -103,7 +101,6 @@ select{
     padding: .5rem .2rem;
     width: 10vw;
     border-radius: .4rem;
-    /* background-color: lightseagreen; */
     background-color: #495D63;
     color: white;
     font-size: 16px;
@@ -119,30 +116,51 @@ select{
 .left{
     padding: 0;
     margin: 0;
-    /* background-color: #CC5A71; */
-    /* background-color: #495D63; */
-    background-color: #98B6B1;
-    /* background-color: #D7BCC8; */
+    background-color: rgba(169, 251, 215, .5);
     border-radius: 0 1rem 1rem 0;
     text-align: center;
 }
 .card{
-    border: solid black ;
     height: max-content;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1rem;
+    background-color: #7ADFBB;
 }
 
 .card h3{
     color: red;
 
 }
+
 .right{
     display: grid;
-    /* flex-wrap: wrap; */
     gap: 1rem;
     min-height: 4rem;
     grid-template-columns: repeat(auto-fit, minmax(100px,20rem));
-    padding: 0 2rem;
+    padding: 1rem 2rem;
 }
+
+
 .add-bg{
-    background-color: #629677;
+    background-color: #A6ECE0;
+}
+
+.remove{
+    background-color: #E55934;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    border: none;
+    font-size: 18px;
+}
+
+.read-btn{
+    background-color: #E55934;
+    font-size: 18px;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    border: none;
+}
+
+.unread{
+    background-color: #9BC53D;
 }

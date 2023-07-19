@@ -111,7 +111,7 @@ function updateDOM(){
                 ${value.read?"the book has been read": "Not yet read"}
             </p>
             <button class="remove">Remove</button>
-            <button class="read ${value.read? '': 'unread'}">${value.read? 'Unread?': 'I have read'}</button>
+            <button class="read-btn ${value.read? '': 'unread'}">${value.read? 'Unread?': 'I have read'}</button>
         </div>
         `
         cards+=item        
@@ -135,7 +135,7 @@ function functionalDOM(){
     })
 
     
-    const readBtn=document.querySelectorAll(".read")
+    const readBtn=document.querySelectorAll(".read-btn")
     readBtn.forEach((btn)=>{
         btn.addEventListener('click',(e)=>{
             const id=parseInt(e.target.parentElement.dataset.id)
