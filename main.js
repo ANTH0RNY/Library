@@ -38,7 +38,7 @@ submit.addEventListener('click', (e)=>{
         e.preventDefault()
         addBookLibrary(title.value, author.value,pages.value, toBoolean(read.value))
         formApp.reset()
-        updateDOM()
+        functionalDOM()
     }
 })
 
@@ -48,9 +48,9 @@ function updateDOM(){
     myLibrary.forEach((value, index)=>{
         const item=`
         <div class="card" id="card" data-id="${index}">
-            <title>
+            <h3>
                 ${value.title}
-            </title>
+            </h3>
             <quote>
                 ${value.author}
             </quote>
@@ -60,9 +60,31 @@ function updateDOM(){
             <p>
                 ${value.read?"the book has been read": "Not yet read"}
             </p>
+            <button class="remove">Remove</button>
+            <button class="read ${value.read? 'read': 'unread'}">${value.read? 'Unread': 'I have read'}</button>
         </div>
         `
         cards+=item        
     })
     right.innerHTML=cards
+}
+
+function functionalDOM(){
+    updateDOM()
+    const button=document.querySelectorAll(".remove")
+    button.forEach((btn)=>{
+        btn.addEventListener('click', (e)=>{
+            console.log(e.target.parentElement.dataset.id);
+            myLibrary.splice(e.target.parentElement.dataset.id, e.target.parentElement.dataset.id === '0' ? 1 : e.target.parentElement.dataset.id)
+            console.log(e.target.parentElement.dataset.id === '0' ? 1 : e.target.parentElement.dataset.id);
+            // updateDOM()
+            document.querySelector(`[data-id="${e.target.parentElement.dataset.id}"]`).style.display="none"
+
+        })
+    })
+
+}
+
+function click(id){
+    console.log(id);
 }
